@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Article } from '../models/article.model';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css'],
 })
-export class ArticleComponent implements OnInit {
+export class ArticleComponent {
   private symbols: number = 250;
-  @Input() article: Article;
-  @Input() articleDesc: string;
+  @Input() article: any;
+  @Input() articleDesc: any;
   descToShow: string;
   articleDescLen: number;
   showReadMoreBtn: boolean = true;
@@ -23,13 +22,13 @@ export class ArticleComponent implements OnInit {
   }
 
   readMore(): void {
-    this.articleDescLen == this.symbols;
+    this.articleDescLen += this.symbols;
 
-    if (this.articleDescLen == this.articleDesc.length) {
+    if (this.articleDescLen >= this.article.description.length) {
       this.showHideBtn = true;
       this.showReadMoreBtn = false;
     } else {
-      this.descToShow = this.articleDesc.substring(0, this.articleDescLen);
+      this.descToShow = this.article.description.substr(0, this.articleDescLen);
     }
   }
 
@@ -45,6 +44,4 @@ export class ArticleComponent implements OnInit {
     this.showHideBtn = false;
     this.showReadMoreBtn = true;
   }
-
-  ngOnInit(): void {}
 }
