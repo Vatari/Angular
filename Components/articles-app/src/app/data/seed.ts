@@ -41,3 +41,5 @@ const data = [
       'https://e7.pngegg.com/pngimages/458/826/png-clipart-grey-bird-and-withered-plant-illustration-sculpture-surrealism-artist-raven-png-material-branch-thumbnail.png',
   },
 ];
+
+export { data };
