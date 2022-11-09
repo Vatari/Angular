@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ArticleComponent {
   private symbols: number = 250;
   @Input() article: any;
-  @Input() articleDesc: any;
+  //@Input() articleDesc: any;
   descToShow: string;
   articleDescLen: number;
   showReadMoreBtn: boolean = true;
