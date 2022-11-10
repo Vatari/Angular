@@ -9,6 +9,8 @@ import { Itheme } from '../interfaces/theme';
 })
 export class ThemeListComponent implements OnInit {
   themeList: Itheme[] | null = null;
+  errorFetchData = false;
+
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
@@ -17,6 +19,7 @@ export class ThemeListComponent implements OnInit {
         this.themeList = value;
       },
       error: (err) => {
+        this.errorFetchData = true;
         console.error(err);
       },
     });
