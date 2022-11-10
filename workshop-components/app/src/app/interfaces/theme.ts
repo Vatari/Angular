@@ -5,4 +5,6 @@ export interface Itheme {
   subscribers: string[];
   userId: IUser;
   posts: string[];
+  created_at: string;
+  updatedAt: string;
 }
