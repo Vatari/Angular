@@ -1,0 +1,7 @@
+<dir *ngFor="let todo of todos">
+  <span>{{ todo.title }}</span>
+
+  <button>
+    {{ todo.isComplete ? "Mark as not completed" : "Mark as completed" }}
+  </button>
+</dir>
