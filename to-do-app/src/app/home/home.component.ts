@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-interface ITodo {
-  title: string;
-  isComplete: boolean;
-}
+import { ITodo } from '../todo-item/todo-item.component';
 
 @Component({
   selector: 'app-home',
@@ -21,4 +17,10 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  markAllasCompleted(): void {
+    for (const todo of this.todos) {
+      todo.isComplete = true;
+    }
+  }
 }
