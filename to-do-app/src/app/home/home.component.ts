@@ -19,8 +19,18 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {}
 
   markAllasCompleted(): void {
-    for (const todo of this.todos) {
-      todo.isComplete = true;
-    }
+    this.todos = this.todos.map((t) => ({
+      ...t,
+      isComplete: true,
+    }));
+  }
+
+  handleStateChange(todo: ITodo): void {
+    const index = this.todos.indexOf(todo);
+
+    this.todos[index] = {
+      ...todo,
+      isComplete: !todo.isComplete,
+    };
   }
 }
