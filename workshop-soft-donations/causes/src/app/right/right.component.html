@@ -37,7 +37,8 @@
             <div class="input-group">
               <div class="input-group-addon">$</div>
               <input
-                type="text"
+                #ammountInput
+                type="number"
                 class="form-control"
                 id="donatedAmount"
                 placeholder="Amount"
@@ -45,7 +46,13 @@
               <div class="input-group-addon">.00</div>
             </div>
           </div>
-          <button type="submit" class="btn btn-success">Make donation</button>
+          <button
+            type="button"
+            class="btn btn-success"
+            (click)="makeDonationHandler()"
+          >
+            Make donation
+          </button>
         </form>
       </div>
     </div>

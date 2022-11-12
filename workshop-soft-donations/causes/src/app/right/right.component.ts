@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CausesService } from '../causes.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { CausesService } from '../causes.service';
   styleUrls: ['./right.component.scss'],
 })
 export class RightComponent implements OnInit {
+  @ViewChild('ammountInput', { static: false })
+  ammountInput!: ElementRef<HTMLInputElement>;
   get selectedCause() {
     return this.causesService.selectedCause;
   }
@@ -27,4 +29,13 @@ export class RightComponent implements OnInit {
   constructor(private causesService: CausesService) {}
 
   ngOnInit(): void {}
+
+  makeDonationHandler() {
+    this.causesService
+      .donate(+this.ammountInput.nativeElement.value)
+      .subscribe(() => {
+        this.causesService.loadCauses();
+        this.ammountInput.nativeElement.value = '';
+      });
+  }
 }

@@ -6,7 +6,6 @@ import { ICause } from './shared/interfaces/cause';
   providedIn: 'root',
 })
 export class CausesService {
-  
   causes!: ICause[];
 
   selectedCause!: ICause;
@@ -18,5 +17,14 @@ export class CausesService {
       .subscribe((causes) => {
         this.causes = causes;
       });
+  }
+
+  donate(ammount: number) {
+    return this.http.put<ICause>(
+      `http://localhost:3000/causes/${this.selectedCause._id}`,
+      {
+        body: { collectedAmount: this.selectedCause.collectedAmount + ammount },
+      }
+    );
   }
 }
