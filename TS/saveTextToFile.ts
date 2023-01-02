@@ -1,5 +1,5 @@
 
-const fs = require('fs');
+import * as fs from 'fs';
 
 async function main() {
   const text = prompt('Enter some text to save:');
