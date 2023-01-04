@@ -1,4 +1,4 @@
-export type User = any;
+export type User = unknown;
 
 export const users: unknown[] = [
     {
@@ -13,7 +13,7 @@ export const users: unknown[] = [
     }
 ];
 
-export function logPerson(user: any) {
+export function logPerson(user: unknown) {
     console.log(` - ${user.name}, ${user.age}`);
 }
 
