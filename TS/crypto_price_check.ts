@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../node_modules/axios';
 
 async function getCryptoPrice(crypto: string): Promise<number> {
   const response = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${crypto}&vs_currencies=usd`);
