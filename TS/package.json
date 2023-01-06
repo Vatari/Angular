@@ -3,6 +3,7 @@
     "request-promise": "^4.2.6"
   },
   "devDependencies": {
+    "@types/node": "^18.11.18",
     "@types/request-promise": "^4.1.48"
   }
 }

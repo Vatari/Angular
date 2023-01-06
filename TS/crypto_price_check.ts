@@ -1,4 +1,4 @@
-import * as request from 'request-promise';
+const request = require('request-promise');
 
 async function getBitcoinPrice() {
   const response = await request.get('https://api.coindesk.com/v1/bpi/currentprice/BTC.json');
@@ -10,3 +10,4 @@ async function getBitcoinPrice() {
   const price = await getBitcoinPrice();
   console.log(`The current price of Bitcoin is $${price}`);
 })();
+
