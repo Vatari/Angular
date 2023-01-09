@@ -8,3 +8,4 @@ function verify(result: Result) {
   }
 }
  
+verify('pass')
